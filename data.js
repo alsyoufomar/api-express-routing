@@ -45,6 +45,30 @@ const films = [
     id: 4,
     title: "Django Unchained",
     director: "Quentin Tarantino"
+  },
+  {
+    id: 5,
+    title: "Inception",
+    director: "Christopher Nolan"
+  },
+  {
+    id: 6,
+    title: "Inception",
+    director: "Christopher Nolan"
+  },
+  {
+    id: 7,
+    title: "Inception",
+    director: "Christopher Nolan"
+  },
+  {
+    id: 8,
+    title: "Inception",
+    director: "Christopher Nolan"
+  }, {
+    id: 9,
+    title: "Inception",
+    director: "Christopher Nolan"
   }
 ];
 

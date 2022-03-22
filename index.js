@@ -15,10 +15,31 @@ app.get("/users", (req, res) => {
   res.json({ users: users })
 })
 app.get("/films", (req, res) => {
-  res.json({ films: films })
+  let arr = films
+  if (req.query.director !== undefined) {
+    arr = films.filter(x => x.director === req.query.director)
+  }
+  if (req.query.limit !== undefined) {
+    let limit = parseInt(req.query.limit)
+    let start = parseInt(req.query.from)
+    arr = films.filter(x => x.id >= start && x.id < start + limit)
+  }
+  res.json({ films: arr })
 })
 app.get("/books", (req, res) => {
-  res.json({ books: books })
+
+  let arr = books
+  let category = req.query.orderBy
+  console.log(category)
+  if (category !== undefined) {
+    arr.sort(function (a, b) {
+      if (a[category] < b[category]) return -1;
+      if (a[category] > b[category]) return 1;
+      return 0;
+    })
+  }
+
+  res.json({ books: arr })
 })
 
 app.get("/films/:id", (req, res) => {
