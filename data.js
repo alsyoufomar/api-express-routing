@@ -28,7 +28,7 @@ const books = [
 const films = [
   {
     id: 1,
-    title: "Bonnie and Clyde",
+    title: "I love u bro",
     director: "Arthur Penn"
   },
   {
